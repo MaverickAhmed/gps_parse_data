@@ -27,6 +27,23 @@ bool checksum_validation(const char* packet, GPSData* gpsData) {
     return (cal_checksum == checksum);
 }
 
+void extract_func(const char* packet, GPSData* gpsData) {
+
+    int tokenStart = 7; // Start index of the first token
+    int tokenEnd;
+
+    for (int i = 0; i < 10; ++i) {
+        tokenEnd = tokenStart;
+        while (packet[tokenEnd] != ',' && packet[tokenEnd] != '\0') {
+            tokenEnd++;
+        }
+        strncpy_s(gpsData->params[i], sizeof(gpsData->params[i]), &packet[tokenStart], tokenEnd - tokenStart);
+        gpsData->params[i][tokenEnd - tokenStart] = '\0';
+        tokenStart = tokenEnd + 1; // Moves to the next token
+    }
+    print_parsed_data(packet, gpsData);
+}
+
 int parse_gps_data(const char* packet, GPSData* gpsData)
 {
     if (!gga_validation(packet, gpsData)) return 0;
