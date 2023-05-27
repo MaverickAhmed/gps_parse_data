@@ -27,11 +27,19 @@ bool checksum_validation(const char* packet, GPSData* gpsData) {
     return (cal_checksum == checksum);
 }
 
+void convert_time_to_utc(char* input) {
+    int hours, minutes, seconds;
+    sscanf_s(input, "%2d%2d%2d", &hours, &minutes, &seconds);
+    // Exports the output as "Time: HH:MM:SS UTC"
+    printf("Time: %02d:%02d:%02d UTC\n", hours, minutes, seconds);
+}
+
 void print_parsed_data(const char* packet, GPSData* gpsData)
 {
     printf("GPS LOCKED SUCCESSFULLY!\n");
     printf("String: %s\n", packet);
-    printf("Time: %s\n", gpsData->params[0]);
+    convert_time_to_utc(gpsData->params[0]);   //comment this & uncomment the line below if you don't want utc conversion
+    //printf("Time: %s\n", gpsData->params[0]);
     printf("Latitude: %s\n", gpsData->params[1]);
     printf("Latitude Direction: %s\n", gpsData->params[2]);
     printf("Longitude: %s\n", gpsData->params[3]);
