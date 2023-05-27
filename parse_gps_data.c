@@ -27,6 +27,23 @@ bool checksum_validation(const char* packet, GPSData* gpsData) {
     return (cal_checksum == checksum);
 }
 
+void print_parsed_data(const char* packet, GPSData* gpsData)
+{
+    printf("GPS LOCKED SUCCESSFULLY!\n");
+    printf("String: %s\n", packet);
+    printf("Time: %s\n", gpsData->params[0]);
+    printf("Latitude: %s\n", gpsData->params[1]);
+    printf("Latitude Direction: %s\n", gpsData->params[2]);
+    printf("Longitude: %s\n", gpsData->params[3]);
+    printf("Longitude Direction: %s\n", gpsData->params[4]);
+    printf("Fix Quality: %s\n", gpsData->params[5]);
+    printf("Number of Satellites: %s\n", gpsData->params[6]);
+    printf("HDOP: %s\n", gpsData->params[7]);
+    printf("Altitude: %s\n", gpsData->params[8]);
+    printf("Height of Geoid: %s\n", gpsData->params[9]);
+    printf("\n");
+}
+
 void extract_func(const char* packet, GPSData* gpsData) {
 
     int tokenStart = 7; // Start index of the first token
