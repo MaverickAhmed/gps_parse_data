@@ -1,5 +1,5 @@
 # PARSE GPS DATA
-This repository takes GPS packet in GGA format, and parses/extracts it into individual parameters. 
+The ESP-32 GPS Data Parsing Library is a versatile software solution designed to facilitate the extraction and parsing of GPS data from NMEA-formatted packets. Built specifically for the ESP-32 microcontroller using the esp-idf v5.0 stable framework, this library empowers developers to effortlessly integrate GPS functionality into their ESP-32 projects. By leveraging the library's features, developers can efficiently extract vital information such as time, latitude, and longitude from GPS packets, enabling real-time positioning and location-based applications. With its emphasis on accuracy, reliability, and resource efficiency, the ESP-32 GPS Data Parsing Library is an essential tool for ESP-32 developers seeking to harness the power of GPS technology in their projects.
 
 ## Features
 1. GPS Data Parsing: The library provides functions to parse GPS data in NMEA format, specifically focusing on extracting relevant information from GGA packets.
