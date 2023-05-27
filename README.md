@@ -13,3 +13,10 @@ The ESP-32 GPS Data Parsing Library is a versatile software solution designed to
 5. Efficient Implementation: The library is implemented with efficiency in mind, using optimized code and algorithms to process and extract GPS data.
 
 ## Installation
+1. Clone the repository to your local machine.
+2. Copy the library files into your ESP-IDF project directory.
+3. Set up the ESP-IDF development environment on your machine.
+4. Integrate the library by adding it to your ESP-IDF project's components folder.
+5. Modify the CMakeLists.txt file to include the library in your build.
+6. Implement GPS parsing in your project using the library's functions and structures.
+7. Build and flash your ESP-IDF project to the ESP-32 device.
