@@ -1,3 +1,6 @@
+#ifndef PARSE_GPS_DATA_H
+#define PARSE_GPS_DATA_H
+
 #include <stdbool.h>
 #include <stdio.h>
 
